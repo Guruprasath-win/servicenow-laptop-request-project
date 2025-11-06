@@ -1,0 +1,429 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Text To Word</title></head><body><p>📄&nbsp;</p>
+<p>PROJECT REPORT</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Amrita College of Engineering and Technology</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Naan Muthavan Project</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>ServiceNow Laptop Request Catalog Item Implementation Project</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Submitted by</p>
+<p>Guru Prasath E</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Abstract</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>This project demonstrates the creation and automation of a Service Catalog Item in ServiceNow for requesting laptops within an organization.</p>
+<p>The Laptop Request Catalog Item enables employees to raise hardware requests, automatically routes them for approval, and generates fulfillment tasks for the IT team.</p>
+<p>This automation enhances transparency, speed, and consistency in laptop provisioning.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1. Introduction</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Manual laptop request and approval processes are slow and error-prone.</p>
+<p>Using ServiceNow IT Service Management, we can design a self-service catalog item that automates requests, approvals, and fulfillment.</p>
+<p>This project focuses on implementing a Laptop Request Catalog Item using Flow Designer for end-to-end automation.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2. Objectives</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>Design a ServiceNow catalog item for laptop requests.</li>
+<li>Configure automatic approval and fulfillment workflows.</li>
+<li>Enable real-time notifications for every stage.</li>
+<li>Provide visibility and faster response times.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>3. Existing System</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Traditional request methods rely on e-mail or spreadsheets:</p>
+<p>&nbsp;</p>
+<ul>
+<li>Approvals are delayed.</li>
+<li>Tracking is difficult.</li>
+<li>Hardware inventory lacks updates.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>4. Proposed System</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The proposed ServiceNow solution:</p>
+<p>&nbsp;</p>
+<ul>
+<li>Lets employees request laptops from the Service Catalog portal.</li>
+<li>Routes requests automatically to managers.</li>
+<li>Creates fulfillment tasks for the IT Hardware group.</li>
+<li>Sends notifications for every update.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Automation ensures consistency, efficiency, and auditability.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5. System Requirements</p>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="middle">
+<p>Category</p>
+</td>
+<td valign="middle">
+<p>Requirement</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Platform</p>
+</td>
+<td valign="middle">
+<p>ServiceNow (Madrid or later)</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Roles</p>
+</td>
+<td valign="middle">
+<p>catalog_admin, flow_designer</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Browser</p>
+</td>
+<td valign="middle">
+<p>Chrome / Edge</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Catalog Category</p>
+</td>
+<td valign="middle">
+<p>IT Services &rarr; Hardware Requests</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>6. Implementation</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Step 1 &ndash; Create the Catalog Item</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ol>
+<li>Navigate to Service Catalog &rarr; Maintain Items &rarr; New</li>
+<li>Fill in:</li>
+<ul>
+<li>Name: Laptop Request</li>
+<li>Category: Hardware Requests</li>
+<li>Short Description: Request for new or replacement HP laptop</li>
+<li>Active: True</li>
+</ul>
+<li>&nbsp;</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Step 2 &ndash; Add Variables</p>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="middle">
+<p>Variable</p>
+</td>
+<td valign="middle">
+<p>Type</p>
+</td>
+<td valign="middle">
+<p>Mandatory</p>
+</td>
+<td valign="middle">
+<p>Description</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Request Type</p>
+</td>
+<td valign="middle">
+<p>Choice</p>
+</td>
+<td valign="middle">
+<p>✅</p>
+</td>
+<td valign="middle">
+<p>New / Replacement</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Laptop Model</p>
+</td>
+<td valign="middle">
+<p>Choice</p>
+</td>
+<td valign="middle">
+<p>✅</p>
+</td>
+<td valign="middle">
+<p>HP EliteBook 840</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Justification</p>
+</td>
+<td valign="middle">
+<p>Multi-line Text</p>
+</td>
+<td valign="middle">
+<p>✅</p>
+</td>
+<td valign="middle">
+<p>Reason for request</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Accessories</p>
+</td>
+<td valign="middle">
+<p>Multi-choice</p>
+</td>
+<td valign="middle">
+<p>❌</p>
+</td>
+<td valign="middle">
+<p>Dock, Monitor, Mouse</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Needed By Date</p>
+</td>
+<td valign="middle">
+<p>Date</p>
+</td>
+<td valign="middle">
+<p>✅</p>
+</td>
+<td valign="middle">
+<p>Expected delivery</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Cost Center</p>
+</td>
+<td valign="middle">
+<p>Text</p>
+</td>
+<td valign="middle">
+<p>✅</p>
+</td>
+<td valign="middle">
+<p>Department code</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Existing Laptop Serial</p>
+</td>
+<td valign="middle">
+<p>Text</p>
+</td>
+<td valign="middle">
+<p>❌</p>
+</td>
+<td valign="middle">
+<p>Visible only for Replacement</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Step 3 &ndash; UI Policy</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>If Request Type = Replacement, display the Existing Laptop Serial field.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Step 4 &ndash; Flow Designer Workflow</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>(Insert image &ldquo;workflow_diagram.png&rdquo; here)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Workflow Steps</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ol>
+<li>Trigger &rarr; Catalog item submitted.</li>
+<li>Manager Approval &rarr; requested for&rsquo;s manager.</li>
+<li>If approved &rarr; create task for IT Hardware Fulfillment.</li>
+<li>If rejected &rarr; close request.</li>
+<li>Send notifications throughout.</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Step 5 &ndash; Notifications</p>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="middle">
+<p>Event</p>
+</td>
+<td valign="middle">
+<p>Recipient</p>
+</td>
+<td valign="middle">
+<p>Message</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Submission</p>
+</td>
+<td valign="middle">
+<p>Requester</p>
+</td>
+<td valign="middle">
+<p>Confirmation of submission</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Approval</p>
+</td>
+<td valign="middle">
+<p>Requester &amp; Manager</p>
+</td>
+<td valign="middle">
+<p>Approval or rejection notice</p>
+</td>
+</tr>
+<tr>
+<td valign="middle">
+<p>Fulfillment</p>
+</td>
+<td valign="middle">
+<p>Requester</p>
+</td>
+<td valign="middle">
+<p>Laptop ready for delivery</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>7. Results</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>After configuration, the system automatically:</p>
+<p>&nbsp;</p>
+<ul>
+<li>Sends notifications on each status update.</li>
+<li>Routes manager approvals instantly.</li>
+<li>Creates IT tasks without manual effort.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>(Insert image &ldquo;catalog_form_mockup.png&rdquo; here)</p>
+<p>&nbsp;</p>
+<p>This reduces turnaround time and improves accountability.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>8. Conclusion</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The ServiceNow Laptop Request Catalog Item automates the entire laptop procurement lifecycle.</p>
+<p>It delivers faster responses, transparent tracking, and improved coordination between employees, managers, and IT.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>9. Future Enhancements</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>Integrate with CMDB for asset assignment.</li>
+<li>Add cost estimation per model.</li>
+<li>Configure SLA tracking for delivery timelines.</li>
+<li>Create reports and dashboards for management analysis.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>10. References</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>ServiceNow Documentation &ndash; https://docs.servicenow.com</li>
+<li>ITSM Best Practices &ndash; Service Catalog Management</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>End of Report</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></body></html>
