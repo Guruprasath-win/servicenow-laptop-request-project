@@ -33,15 +33,11 @@ It covers form design, workflow automation, and fulfillment tracking.
 ![Workflow](workflow_diagram.png)
 
 
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/f45b3035-e4ca-493e-85c7-cb3c4c55f0e6" />### 
-
 
 ---
 
 ## 💻 Form Mock-up
 ![Form](catalog_form_mockup.png)
-
-<img width="1024" height="1536" alt="Image" src="https://github.com/user-attachments/assets/cea87d7f-9c93-4117-b7c7-31cd6e4435b2" />
 
 ---
 
