@@ -1,0 +1,167 @@
+
+
+📄 PROJECT REPORT
+
+⸻
+
+Amrita College of Engineering and Technology
+
+Naan Muthavan Project
+
+⸻
+
+ServiceNow Laptop Request Catalog Item Implementation Project
+
+Submitted by
+Guru Prasath E
+
+⸻
+
+Abstract
+
+This project demonstrates the creation and automation of a Service Catalog Item in ServiceNow for requesting laptops within an organization.
+The Laptop Request Catalog Item enables employees to raise hardware requests, automatically routes them for approval, and generates fulfillment tasks for the IT team.
+This automation enhances transparency, speed, and consistency in laptop provisioning.
+
+⸻
+
+1. Introduction
+
+Manual laptop request and approval processes are slow and error-prone.
+Using ServiceNow IT Service Management, we can design a self-service catalog item that automates requests, approvals, and fulfillment.
+This project focuses on implementing a Laptop Request Catalog Item using Flow Designer for end-to-end automation.
+
+⸻
+
+2. Objectives
+	•	Design a ServiceNow catalog item for laptop requests.
+	•	Configure automatic approval and fulfillment workflows.
+	•	Enable real-time notifications for every stage.
+	•	Provide visibility and faster response times.
+
+⸻
+
+3. Existing System
+
+Traditional request methods rely on e-mail or spreadsheets:
+	•	Approvals are delayed.
+	•	Tracking is difficult.
+	•	Hardware inventory lacks updates.
+
+⸻
+
+4. Proposed System
+
+The proposed ServiceNow solution:
+	•	Lets employees request laptops from the Service Catalog portal.
+	•	Routes requests automatically to managers.
+	•	Creates fulfillment tasks for the IT Hardware group.
+	•	Sends notifications for every update.
+
+Automation ensures consistency, efficiency, and auditability.
+
+⸻
+
+5. System Requirements
+
+Category	Requirement
+Platform	ServiceNow (Madrid or later)
+Roles	catalog_admin, flow_designer
+Browser	Chrome / Edge
+Catalog Category	IT Services → Hardware Requests
+
+
+⸻
+
+6. Implementation
+
+Step 1 – Create the Catalog Item
+	1.	Navigate to Service Catalog → Maintain Items → New
+	2.	Fill in:
+	•	Name: Laptop Request
+	•	Category: Hardware Requests
+	•	Short Description: Request for new or replacement HP laptop
+	•	Active: True
+
+⸻
+
+Step 2 – Add Variables
+
+Variable	Type	Mandatory	Description
+Request Type	Choice	✅	New / Replacement
+Laptop Model	Choice	✅	HP EliteBook 840
+Justification	Multi-line Text	✅	Reason for request
+Accessories	Multi-choice	❌	Dock, Monitor, Mouse
+Needed By Date	Date	✅	Expected delivery
+Cost Center	Text	✅	Department code
+Existing Laptop Serial	Text	❌	Visible only for Replacement
+
+
+⸻
+
+Step 3 – UI Policy
+
+If Request Type = Replacement, display the Existing Laptop Serial field.
+
+⸻
+
+Step 4 – Flow Designer Workflow
+
+(Insert image “workflow_diagram.png” here)
+
+Workflow Steps
+	1.	Trigger → Catalog item submitted.
+	2.	Manager Approval → requested for’s manager.
+	3.	If approved → create task for IT Hardware Fulfillment.
+	4.	If rejected → close request.
+	5.	Send notifications throughout.
+
+⸻
+
+Step 5 – Notifications
+
+Event	Recipient	Message
+Submission	Requester	Confirmation of submission
+Approval	Requester & Manager	Approval or rejection notice
+Fulfillment	Requester	Laptop ready for delivery
+
+
+⸻
+
+7. Results
+
+After configuration, the system automatically:
+	•	Sends notifications on each status update.
+	•	Routes manager approvals instantly.
+	•	Creates IT tasks without manual effort.
+
+(Insert image “catalog_form_mockup.png” here)
+
+This reduces turnaround time and improves accountability.
+
+⸻
+
+8. Conclusion
+
+The ServiceNow Laptop Request Catalog Item automates the entire laptop procurement lifecycle.
+It delivers faster responses, transparent tracking, and improved coordination between employees, managers, and IT.
+
+⸻
+
+9. Future Enhancements
+	•	Integrate with CMDB for asset assignment.
+	•	Add cost estimation per model.
+	•	Configure SLA tracking for delivery timelines.
+	•	Create reports and dashboards for management analysis.
+
+⸻
+
+10. References
+	•	ServiceNow Documentation – https://docs.servicenow.com
+	•	ITSM Best Practices – Service Catalog Management
+
+⸻
+
+End of Report
+
+⸻
