@@ -32,15 +32,32 @@ It covers form design, workflow automation, and fulfillment tracking.
 ## 🧭 Workflow
 ![Workflow](workflow_diagram.png)
 
+
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/f45b3035-e4ca-493e-85c7-cb3c4c55f0e6" />### 
+
+
 ---
 
 ## 💻 Form Mock-up
 ![Form](catalog_form_mockup.png)
 
+<img width="1024" height="1536" alt="Image" src="https://github.com/user-attachments/assets/cea87d7f-9c93-4117-b7c7-31cd6e4435b2" />
+
 ---
 
 ## 📜 License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). MIT License
+
+Copyright (c) 2025 Guru Prasath E
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 ---
 
